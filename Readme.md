@@ -9,3 +9,10 @@
     - Ubuntu Server (Suricata, Splunk UF)
 ## Architechture
 ![setup of lab](NET-LAB.drawio.png)
+
+## Attack Simulation & Detection (Atomic Red Team)
+### Simulated attacks used to test and validate the detection pipeline.
+
+####  TA0043 - Reconnaissance
+- ![Port Scan](./MITRE/TA0043-Reconnaissance/PortScan.md)
+
