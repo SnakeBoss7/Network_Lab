@@ -14,5 +14,5 @@
 ### Simulated attacks used to test and validate the detection pipeline.
 
 ####  TA0043 - Reconnaissance
-- ![Port Scan](./MITRE/TA0043-Reconnaissance/PortScan.md)
+- [Port Scan](./MITRE/TA0043-Reconnaissance/PortScan.md)
 
