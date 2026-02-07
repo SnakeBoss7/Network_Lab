@@ -129,4 +129,6 @@ index="zeek"
 | `-sF` (FIN Scan) | No | Maybe | Medium |
 | `-sU` (UDP Scan) | No | ICMP | Medium |
 
+> Behavioral detection is for slow scans and signature based detection is for fast scans.
 
+> In production environments, trusted monitoring and vulnerability scanner IPs are typically whitelisted or suppressed. In this lab I assume such noise has already been tuned out to focus on malicious reconnaissance.

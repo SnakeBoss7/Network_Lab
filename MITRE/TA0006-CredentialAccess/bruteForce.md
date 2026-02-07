@@ -47,3 +47,13 @@ alert tcp any any -> $HOME_NET 445(
 )
 ```
 ![Suricata Detection](./images/smbSuricata.png)
+### Splunk WinEventLog:Security
+```
+index="windows10" EventCode=4625
+| eval Logon_type = case(
+    Logon_Type == 3, "Remote Login",
+    1=1,Logon_Type
+)
+| stats values(Logon_Type) as Logon_type_number values(Logon_type) as Logon_Type values(Source_Network_Address) as Actor values (Failure_Reason) as Failure_reason count by Account_Name
+```
+![Splunk](./images/win_auth.png)
