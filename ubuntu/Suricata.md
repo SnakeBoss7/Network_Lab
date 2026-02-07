@@ -10,7 +10,8 @@ sudo apt install suricata
 ## Configuration
 
 ```bash
-sudo suricata -c /etc/suricata/suricata.yaml -i eth0
+sudo suricata -c /etc/suricata/suricata.yaml -i <interface>
+sudo suricata -c /etc/suricata/suricata.yaml -i enp0s8
 ```
 
 ## Update Rules
@@ -18,15 +19,10 @@ sudo suricata -c /etc/suricata/suricata.yaml -i eth0
 ```bash
 sudo suricata-update
 ```
-
-## Rules Management
-
+## custom rules 
 ```bash
-sudo suricata-update --list-all
-sudo suricata-update --list-all --json
-sudo suricata-update --list-all --json --output suricata-update.json
+sudo nano /var/lib/suricata/rules/suircata.rules
 ```
-
 ##  Suricata Service
 
 ```bash
@@ -35,7 +31,6 @@ sudo systemctl enable suricata
 ```
 
 ## logs 
-
 
 | File                       | Purpose         |
 |----------------------------|-----------------|

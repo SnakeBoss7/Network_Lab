@@ -24,46 +24,13 @@
 
 ---
 
-##  Network Architecture
 
-![Network Lab Setup](NET-LAB.drawio.png)
-
-### Network Topology
-
-```
-┌─────────────────────────────────────────────────────────────────────┐
-│                         EXTERNAL NETWORK                            │
-│                      (NAT - 192.168.50.0/24)                        │
-└───────────────────────────────┬─────────────────────────────────────┘
-                                │
-                    ┌───────────▼───────────┐
-                    │   Ubuntu Server       │
-                    │   (Router/IDS)        │
-                    │   ─────────────────   │
-                    │   WAN: 192.168.50.3   │
-                    │   LAN: 10.10.10.1     │
-                    │   ─────────────────   │
-                    │    Suricata IDS       │
-                    │    Splunk Indexer     │
-                    └───────────┬───────────┘
-                                │
-┌───────────────────────────────┼───────────────────────────────────┐
-│                    INTERNAL LAN (10.10.10.0/24)                    │
-│                                                                    │
-│   ┌─────────────────┐                    ┌─────────────────┐      │
-│   │  Kali Linux     │                    │  Windows 10     │      │
-│   │  (Attacker)     │ ──────────────────▶│  (Victim)       │      │
-│   │  ────────────   │     Attack Flow    │  ────────────   │      │
-│   │  IP: 10.10.10.2 │                    │  IP: 10.10.10.5 │      │
-│   │  GW: 10.10.10.1 │                    │  GW: 10.10.10.1 │      │
-│   └─────────────────┘                    └─────────────────┘      │
-│                                                                    │
-└────────────────────────────────────────────────────────────────────┘
-```
-
----
 
 ##  Network Configuration
+
+
+![network_config](./network_config.drawio%20(1).png)
+---
 
 ### IP Address Assignments
 
@@ -84,12 +51,12 @@
 
 ### Simulated attacks used to test and validate the detection pipeline
 
-| Tactic ID | Tactic Name | Technique | Documentation |
-|-----------|-------------|-----------|---------------|
-| **TA0043** | Reconnaissance | Port Scanning | [ Port Scan](./MITRE/TA0043-Reconnaissance/PortScan.md) |
-| **TA0006** | Credential Access | SSH Brute Force | [ Brute Force](./MITRE/TA0006-CredentialAccess/bruteForce.md) |
-| **TA0006** | Credential Access | SMB Brute Force | [ Brute Force](./MITRE/TA0006-CredentialAccess/bruteForce.md) |
-| **TA0011** | Command & Control | HTTP Beaconing | [ HTTP Beaconing](./MITRE/Command&control/http_beconing.md) |
+| Tactic ID | Tactic Name | Technique | Documentation | Detection Tools |
+|-----------|-------------|-----------|---------------|---------------|
+| **TA0043** | Reconnaissance | Port Scanning | [ Port Scan](./MITRE/TA0043-Reconnaissance/PortScan.md) | Suricata(Signature based), Zeek(Behavioral based) |
+| **TA0006** | Credential Access | SSH Brute Force | [ Brute Force](./MITRE/TA0006-CredentialAccess/bruteForce.md) | Suricata, Splunk + Linux auth.log |
+| **TA0006** | Credential Access | SMB Brute Force | [ Brute Force](./MITRE/TA0006-CredentialAccess/bruteForce.md) | Suricata, Splunk + WinEventLog |
+| **TA0011** | Command & Control | HTTP Beaconing | [ HTTP Beaconing](./MITRE/Command&control/http_beconing.md) | Suricata, Splunk, Zeek |
 
 ---
 
