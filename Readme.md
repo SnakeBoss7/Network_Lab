@@ -18,9 +18,9 @@
 
 | VM | OS | Role | Purpose |
 |----|-----|------|---------|
-| **Kali Linux** | Kali Linux |  Attacker | Attack simulation & penetration testing |
+| **Kali Linux** | Kali Linux |  Attacker | Attack simulation |
 | **Ubuntu Server** | Ubuntu |  IDS/Router | Suricata IDS, Splunk Indexer, Network routing |
-| **Win-10** | Windows 10 |  Victim | Target system for attack simulations |
+| **Win-10** | Windows 10 |  Victim | Target system for attack simulation |
 
 ---
 
@@ -29,7 +29,7 @@
 ##  Network Configuration
 
 
-![network_config](./network_config.drawio%20(1).png)
+![network_config](./images/network_config.drawio%20(1).png)
 ---
 
 ### IP Address Assignments

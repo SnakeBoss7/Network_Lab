@@ -124,9 +124,9 @@ index="zeek"
 
 | Scan Type | App Logs | Firewall Logs | IDS Visibility |
 |-----------|----------|---------------|----------------|
-| `-sT` (TCP Connect) | Yes | Yes | High |
+| `-sT` (TCP Connect) | Yes | Yes | High|
 | `-sS` (SYN Stealth) | No | Yes | High |
-| `-sF` (FIN Scan) | No | Maybe | Medium |
+| `-sF` (FIN Scan) | No | Maybe(can bypass) | Medium|
 | `-sU` (UDP Scan) | No | ICMP | Medium |
 
 > Behavioral detection is for slow scans and signature based detection is for fast scans.
